@@ -1,0 +1,13 @@
+@model Department
+@{
+    ViewData["Title"] = "Edit Department";
+    ViewData["IsEdit"] = true;
+}
+
+<h1>Edit Department</h1>
+
+<partial name="_DepartmentForm" model="Model" view-data="ViewData" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

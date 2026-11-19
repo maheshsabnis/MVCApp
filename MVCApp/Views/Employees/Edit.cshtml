@@ -1,0 +1,13 @@
+@model Employee
+@{
+    ViewData["Title"] = "Edit Employee";
+    ViewData["IsEdit"] = true;
+}
+
+<h1>Edit Employee</h1>
+
+<partial name="_EmployeeForm" model="Model" view-data="ViewData" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

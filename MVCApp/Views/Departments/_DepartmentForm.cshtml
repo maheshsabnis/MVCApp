@@ -1,0 +1,32 @@
+@model Department
+@{
+    var isEdit = (bool)(ViewData["IsEdit"] ?? false);
+}
+
+<form asp-action="@(isEdit ? "Edit" : "Create")" asp-route-id="@(isEdit ? Model.DeptNo : null)" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="DeptNo" class="form-label"></label>
+        @if (isEdit)
+        {
+            <input asp-for="DeptNo" class="form-control" readonly />
+        }
+        else
+        {
+            <input asp-for="DeptNo" class="form-control" />
+        }
+        <span asp-validation-for="DeptNo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DeptName" class="form-label"></label>
+        <input asp-for="DeptName" class="form-control" />
+        <span asp-validation-for="DeptName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Location" class="form-label"></label>
+        <input asp-for="Location" class="form-control" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

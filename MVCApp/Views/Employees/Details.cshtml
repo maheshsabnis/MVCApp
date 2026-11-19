@@ -1,0 +1,22 @@
+@model Employee
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h1>Employee Details</h1>
+
+<dl class="row">
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.EmpNo)</dt>
+    <dd class="col-sm-10">@Model.EmpNo</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.EmpName)</dt>
+    <dd class="col-sm-10">@Model.EmpName</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Salary)</dt>
+    <dd class="col-sm-10">@Model.Salary.ToString("N0")</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.DeptName)</dt>
+    <dd class="col-sm-10">@Model.DeptName</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Designation)</dt>
+    <dd class="col-sm-10">@Model.Designation</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.EmpNo" class="btn btn-primary">Edit</a>
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>
