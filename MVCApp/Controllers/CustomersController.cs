@@ -4,6 +4,9 @@ using MVCApp.Services;
 
 namespace MVCApp.Controllers;
 
+/// <summary>
+/// Customer
+/// </summary>
 public class CustomersController : Controller
 {
     private readonly ICustomerStore _store;
